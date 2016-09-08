@@ -17,7 +17,6 @@ public class FindGuitarTester {
     Inventory inventory;
 
 
-
     @Before
     public void setup() {
         initInventory();
@@ -26,7 +25,7 @@ public class FindGuitarTester {
     @Test
     public void test_searchGuitar() {
         GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor",
-                Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+                Type.ELECTRIC, 12, Wood.ALDER, Wood.ALDER);
         List matchingGuitars = inventory.search(whatErinLikes);
         if (!matchingGuitars.isEmpty()) {
             System.out.println("Erin, you might like these guitars:");
@@ -52,13 +51,13 @@ public class FindGuitarTester {
                 "CJ", Type.ACOUSTIC,
                 Wood.INDIAN_ROSEWOOD, Wood.SITKA));
         inventory.addGuitar("V95693", 1499.95, new GuitarSpec(Builder.FENDER,
-                "Stratocastor", Type.ELECTRIC,
+                "Stratocastor", Type.ELECTRIC, 12,
                 Wood.ALDER, Wood.ALDER));
         inventory.addGuitar("V9512", 1549.95, new GuitarSpec(Builder.FENDER,
-                "Stratocastor", Type.ELECTRIC,
+                "Stratocastor", Type.ELECTRIC, 12,
                 Wood.ALDER, Wood.ALDER));
         inventory.addGuitar("122784", 5495.95, new GuitarSpec(Builder.MARTIN,
-                "D-18", Type.ACOUSTIC,
+                "D-18", Type.ACOUSTIC, 12,
                 Wood.MAHOGANY, Wood.ADIRONDACK));
         inventory.addGuitar("76531", 6295.95, new GuitarSpec(Builder.MARTIN,
                 "OM-28", Type.ACOUSTIC,
@@ -73,7 +72,7 @@ public class FindGuitarTester {
                 "D-28", Type.ACOUSTIC,
                 Wood.BRAZILIAN_ROSEWOOD, Wood.ADIRONDACK));
         inventory.addGuitar("1092", 12995.95, new GuitarSpec(Builder.OLSON,
-                "SJ", Type.ACOUSTIC,
+                "SJ", Type.ACOUSTIC, 12,
                 Wood.INDIAN_ROSEWOOD, Wood.CEDAR));
         inventory.addGuitar("566-62", 8999.95, new GuitarSpec(Builder.RYAN,
                 "Cathedral", Type.ACOUSTIC,
