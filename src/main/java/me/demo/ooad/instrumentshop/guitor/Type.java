@@ -1,4 +1,4 @@
-package me.demo.ooad.guitarshop;
+package me.demo.ooad.instrumentshop.guitor;
 
 public enum Type {
 
