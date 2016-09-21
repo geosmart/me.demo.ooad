@@ -4,10 +4,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import me.demo.ooad.instrumentshop.guitor.Guitar;
-import me.demo.ooad.instrumentshop.guitor.GuitarSpec;
-import me.demo.ooad.instrumentshop.mandolin.Mandolin;
-import me.demo.ooad.instrumentshop.mandolin.MandolinSpec;
+import me.demo.ooad.instrumentshop.instrument.Instrument;
+import me.demo.ooad.instrumentshop.instrument.InstrumentSpec;
+import me.demo.ooad.instrumentshop.instrument.InstrumentType;
 
 /**
  * 乐器仓库
@@ -21,16 +20,9 @@ public class Inventory {
     }
 
 
-    public void addInstrument(String serialNumber, double price, InstrumentSpec spec) {
-        Instrument instrument = null;
-        if (spec instanceof GuitarSpec) {
-            instrument = new Guitar(serialNumber, price, spec);
-        } else if (spec instanceof MandolinSpec) {
-            instrument = new Mandolin(serialNumber, price, spec);
-        }
-        if (null != instrument) {
-            instruments.add(instrument);
-        }
+    public void addInstrument(InstrumentType instrumentType, String serialNumber, double price, InstrumentSpec spec) {
+        Instrument instrument = new Instrument(instrumentType, serialNumber, price, spec);
+        instruments.add(instrument);
     }
 
     public Instrument getInstrument(String serialNumber) {
@@ -43,12 +35,14 @@ public class Inventory {
         return null;
     }
 
-    public List search(InstrumentSpec searchInstrumentSpec) {
+    public List search(InstrumentType instrumentType, InstrumentSpec searchInstrumentSpec) {
         List matchingInstruments = new LinkedList();
-        for (Iterator i = instruments.iterator(); i.hasNext(); ) {
-            Instrument instrument = (Instrument) i.next();
-            if (instrument.getSpec().matchs(searchInstrumentSpec)) {
-                matchingInstruments.add(instrument);
+        if (!searchInstrumentSpec.getProperties().isEmpty()) {
+            for (Iterator i = instruments.iterator(); i.hasNext(); ) {
+                Instrument instrument = (Instrument) i.next();
+                if (instrumentType.equals(instrument.getInstrumentType()) && instrument.getSpec().matchs(searchInstrumentSpec)) {
+                    matchingInstruments.add(instrument);
+                }
             }
         }
         return matchingInstruments;
