@@ -8,7 +8,7 @@ import me.demo.ooad.instrumentshop.guitor.Wood;
  * 乐器特性
  * Created by Think on 2016/9/20.
  */
-public abstract class InstrumentSpec {
+public class InstrumentSpec {
     private Builder builder;
     private String model;
     private Type type;

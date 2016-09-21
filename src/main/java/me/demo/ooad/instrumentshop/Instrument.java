@@ -4,7 +4,7 @@ package me.demo.ooad.instrumentshop;
  * 乐器
  * Created by Think on 2016/9/20.
  */
-public abstract class Instrument {
+public   class Instrument {
     private String serialNumber;
     private double price;
     private InstrumentSpec spec;
