@@ -45,27 +45,10 @@ public class Inventory {
 
     public List search(InstrumentSpec searchInstrumentSpec) {
         List matchingInstruments = new LinkedList();
-
         for (Iterator i = instruments.iterator(); i.hasNext(); ) {
             Instrument instrument = (Instrument) i.next();
-            if (searchInstrumentSpec instanceof GuitarSpec) {
-                if (instrument instanceof Guitar) {
-                    GuitarSpec spec = (GuitarSpec) instrument.getSpec();
-                    //在guitoSpec中封装match
-                    if (spec.matchs(searchInstrumentSpec)) {
-                        matchingInstruments.add(instrument);
-                    }
-                }
-            } else if (searchInstrumentSpec instanceof MandolinSpec) {
-                if (instrument instanceof Mandolin) {
-                    MandolinSpec spec = (MandolinSpec) instrument.getSpec();
-                    //在guitoSpec中封装match
-                    if (spec.matchs(searchInstrumentSpec)) {
-                        matchingInstruments.add(instrument);
-                    }
-                }
-            } else {
-                i.next();
+            if (instrument.getSpec().matchs(searchInstrumentSpec)) {
+                matchingInstruments.add(instrument);
             }
         }
         return matchingInstruments;
