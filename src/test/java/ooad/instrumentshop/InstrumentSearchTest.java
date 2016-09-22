@@ -1,4 +1,4 @@
-package ooad.guitarshop;
+package ooad.instrumentshop;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -66,7 +66,7 @@ public class InstrumentSearchTest {
             for (Iterator i = matchingInstruments.iterator(); i.hasNext(); ) {
                 Instrument instrument = (Instrument) i.next();
                 InstrumentSpec spec = instrument.getSpec();
-                String instrumentType = instrument.getInstrumentType().toString();
+                String instrumentType = instrument.getType().toString();
                 System.out.println("  We have a " +
                         spec.getProperty("builder") + " " + spec.getProperty("model") + " " +
                         spec.getProperty("type") + " " + instrumentType + ":\n     " +

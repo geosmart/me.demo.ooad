@@ -40,7 +40,7 @@ public class Inventory {
         if (!searchInstrumentSpec.getProperties().isEmpty()) {
             for (Iterator i = instruments.iterator(); i.hasNext(); ) {
                 Instrument instrument = (Instrument) i.next();
-                if (instrumentType.equals(instrument.getInstrumentType()) && instrument.getSpec().matchs(searchInstrumentSpec)) {
+                if (instrumentType.equals(instrument.getType()) && instrument.getSpec().matchs(searchInstrumentSpec)) {
                     matchingInstruments.add(instrument);
                 }
             }

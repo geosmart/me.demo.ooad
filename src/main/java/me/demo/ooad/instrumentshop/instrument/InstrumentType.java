@@ -1,6 +1,7 @@
 package me.demo.ooad.instrumentshop.instrument;
 
 /**
+ * 乐器类型
  * Created by Think on 2016/9/21.
  */
 public enum InstrumentType {

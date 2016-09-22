@@ -1,0 +1,14 @@
+//Define
+[Instrument|-spec:InstrumentSpec;-type:InstrumentType;-serialNumber:String; -price:double;]
+[InstrumentSpec|-properties:Map]-[note:Map Contain Property]
+
+//Association
+[Instrument]-.->[InstrumentSpec]
+[Instrument]-.->[InstrumentType]
+
+[InstrumentSpec]<>-2>[Woord]
+[InstrumentSpec]<>-1>[Builder]
+[InstrumentSpec]<>-1>[Style]
+[InstrumentSpec]<>-1>[Type]
+
+[Inventory|-instruments:List;|+search():List;]-*>[Instrument]

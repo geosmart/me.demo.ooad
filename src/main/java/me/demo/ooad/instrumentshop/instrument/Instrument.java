@@ -8,10 +8,10 @@ public class Instrument {
     private String serialNumber;
     private double price;
     private InstrumentSpec spec;
-    private InstrumentType instrumentType;
+    private InstrumentType type;
 
     public Instrument(InstrumentType instrumentType, String serialNumber, double price, InstrumentSpec spec) {
-        this.instrumentType = instrumentType;
+        this.type = instrumentType;
 
         this.serialNumber = serialNumber;
         this.price = price;
@@ -27,8 +27,8 @@ public class Instrument {
     }
 
 
-    public InstrumentType getInstrumentType() {
-        return instrumentType;
+    public InstrumentType getType() {
+        return type;
     }
 
     public InstrumentSpec getSpec() {
