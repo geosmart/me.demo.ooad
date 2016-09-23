@@ -81,4 +81,4 @@ OO原则
 用例图（use case diagram）整理系统的整体轮廓（big-picture）,避免过早陷入具体实现细节  
 领域分析（domain analysis）：识别、收集、组织和表示领域相关信息的流程，根据的是现有系统与其开发历程的研究，领域专家捕捉到的知识，潜在的理论以及领域里新兴的技术。  
 领域分析帮你避免构建不属于你的责任范围内的系统部分；  
-![用例图](uml/game/game.png)
+![用例图](uml/game/game_usecase.png)
