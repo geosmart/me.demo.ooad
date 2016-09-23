@@ -1,0 +1,7 @@
+[game designer]-(create new game)
+[game designer]-(modify exist game)
+[game designer]-(deploy game)
+[game]-(create new chessboard)
+[game]-(create or delete battle unit)
+[game]-(move battle unit)
+[game]-(take turns)
